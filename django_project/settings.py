@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     "https://marca-blog.herokuapp.com/",
     "http://marca-blog.herokuapp.com/",
     "marca-blog.herokuapp.com/",
+    'marca-blog.herokuapp.com',
     "127.0.0.1",
 ]
 
