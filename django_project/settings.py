@@ -136,9 +136,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(ROOT_PATH,'blog/static'),]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_URL = 'blog/static/'
+# STATICFILES_DIRS = [os.path.join(ROOT_PATH,'blog/static'),]
+STATIC_ROOT = os.path.join(BASE_DIR,'blog/static')
 
 
 
@@ -157,6 +157,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 import django_heroku
 django_heroku.settings(locals())
