@@ -27,8 +27,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',cast = bool)
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    "*",
     '0.0.0.0',
     "https://marca-blog.herokuapp.com/",
     "http://marca-blog.herokuapp.com/",
@@ -65,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://marca-blog.herokuapp.com/"]
+# CSRF_TRUSTED_ORIGINS = ["https://marca-blog.herokuapp.com/"]
 
 
 ROOT_URLCONF = 'django_project.urls'
@@ -136,9 +138,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = 'blog/static/'
-# STATICFILES_DIRS = [os.path.join(ROOT_PATH,'blog/static'),]
-STATIC_ROOT = os.path.join(BASE_DIR,'blog/static')
+STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(ROOT_PATH,'static'),]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 
@@ -158,7 +160,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 import django_heroku
 django_heroku.settings(locals(), staticfiles=False)
